@@ -29,11 +29,14 @@ tr{
     justify-content: space-around;
     width:100%;
     border: 1px black solid;
+    background-color: rgba(58, 57, 57, 0.55);
 }
 td{
     width:20%;
     align-self: center;
     font-size: 20px;
     font-weight: bolder;
+    color: white;
+    text-shadow: 4px 4px #1f1e1e;
 }
 </style>

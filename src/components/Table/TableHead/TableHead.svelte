@@ -29,11 +29,15 @@ tr{
     justify-content: space-around;
     width:100%;
     border: 1px black solid;
+    background-color: rgba(58, 57, 57, 0.55);
 }
 
 th{
     width:20%;
     font-size: 35px;
+    user-select: none;
+    color: white;
+    text-shadow: 4px 4px #1f1e1e;
 }
 
 th:hover{

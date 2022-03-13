@@ -459,7 +459,7 @@ var app = (function () {
     			th = element("th");
     			t = text(t_value);
     			attr_dev(th, "id", th_id_value = /*data*/ ctx[3]);
-    			attr_dev(th, "class", "svelte-1u00d6n");
+    			attr_dev(th, "class", "svelte-1xj0v4z");
     			add_location(th, file$3, 20, 0, 401);
     		},
     		m: function mount(target, anchor) {
@@ -514,7 +514,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(tr, "class", "svelte-1u00d6n");
+    			attr_dev(tr, "class", "svelte-1xj0v4z");
     			add_location(tr, file$3, 18, 0, 369);
     		},
     		l: function claim(nodes) {
@@ -665,7 +665,7 @@ var app = (function () {
     		c: function create() {
     			td = element("td");
     			t = text(t_value);
-    			attr_dev(td, "class", "svelte-1bderm0");
+    			attr_dev(td, "class", "svelte-1p9jfjp");
     			add_location(td, file$2, 19, 4, 403);
     		},
     		m: function mount(target, anchor) {
@@ -704,7 +704,7 @@ var app = (function () {
     			if (!src_url_equal(img.src, img_src_value = /*personData*/ ctx[0][/*data*/ ctx[2]])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "An avatar of a person");
     			add_location(img, file$2, 17, 8, 321);
-    			attr_dev(td, "class", "svelte-1bderm0");
+    			attr_dev(td, "class", "svelte-1p9jfjp");
     			add_location(td, file$2, 17, 4, 317);
     		},
     		m: function mount(target, anchor) {
@@ -791,7 +791,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(tr, "class", "svelte-1bderm0");
+    			attr_dev(tr, "class", "svelte-1p9jfjp");
     			add_location(tr, file$2, 14, 0, 244);
     		},
     		l: function claim(nodes) {
@@ -924,7 +924,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (29:0) {#each listOfPeople as person}
+    // (30:0) {#each listOfPeople as person}
     function create_each_block(ctx) {
     	let tablerow;
     	let current;
@@ -965,7 +965,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(29:0) {#each listOfPeople as person}",
+    		source: "(30:0) {#each listOfPeople as person}",
     		ctx
     	});
 
@@ -1006,8 +1006,8 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(table, "class", "svelte-1uq61t");
-    			add_location(table, file$1, 26, 0, 742);
+    			attr_dev(table, "class", "svelte-4n4l85");
+    			add_location(table, file$1, 27, 0, 760);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1202,13 +1202,14 @@ var app = (function () {
     			h1.textContent = "People-verse";
     			t1 = space();
     			p = element("p");
-    			p.textContent = "A place where you will always find new faces and names";
+    			p.textContent = "A place where you will always find new people";
     			t3 = space();
     			create_component(table.$$.fragment);
-    			attr_dev(h1, "class", "svelte-1tky8bj");
+    			attr_dev(h1, "class", "svelte-no7we7");
     			add_location(h1, file, 6, 1, 101);
+    			attr_dev(p, "class", "svelte-no7we7");
     			add_location(p, file, 7, 1, 124);
-    			attr_dev(main, "class", "svelte-1tky8bj");
+    			attr_dev(main, "class", "svelte-no7we7");
     			add_location(main, file, 5, 0, 93);
     		},
     		l: function claim(nodes) {

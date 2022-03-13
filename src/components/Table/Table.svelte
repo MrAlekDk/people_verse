@@ -18,12 +18,13 @@
                 if(y>x) return 1;
                 return 0;
             })
-    }
-    else{
-        listOfPeople = listOfPeople.reverse()
-    }
+        }
+        else{
+            listOfPeople = listOfPeople.reverse()
+        }
     }
 </script>
+
 <table>
 <TableHead headData={headData} on:message={sort}/>
 {#each listOfPeople as person}
@@ -32,7 +33,6 @@
 </table>
 
 <style>
-
 table{
     display:flex;
     flex-direction:column;
