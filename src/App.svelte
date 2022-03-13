@@ -1,11 +1,7 @@
 <script>
 	export let people;
 	import Table from "./components/Table/Table.svelte"
-
-
-
 </script>
-
 
 <main>
 	<h1>People-verse</h1>

@@ -6,16 +6,22 @@
     import TableHead from "./TableHead/TableHead.svelte"
     import TableRow from "./TableRow/TableRow.svelte"
 
+    let lastSorted =''
     function sort(event){
         const target =event.detail.column;
-        listOfPeople = listOfPeople.sort(function(a,b){
-            let x = a[target]
-            let y = b[target]
-            if(x<y) return -1;
-            if(y>x) return 1;
-            return 0;
-        })
-
+        if(target !==lastSorted){
+            lastSorted = target;
+            listOfPeople = listOfPeople.sort(function(a,b){
+                let x = a[target]
+                let y = b[target]
+                if(x<y) return -1;
+                if(y>x) return 1;
+                return 0;
+            })
+    }
+    else{
+        listOfPeople = listOfPeople.reverse()
+    }
     }
 </script>
 <table>

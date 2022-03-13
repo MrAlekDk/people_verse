@@ -920,17 +920,17 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[4] = list[i];
+    	child_ctx[5] = list[i];
     	return child_ctx;
     }
 
-    // (23:0) {#each listOfPeople as person}
+    // (29:0) {#each listOfPeople as person}
     function create_each_block(ctx) {
     	let tablerow;
     	let current;
 
     	tablerow = new TableRow({
-    			props: { personData: /*person*/ ctx[4] },
+    			props: { personData: /*person*/ ctx[5] },
     			$$inline: true
     		});
 
@@ -944,7 +944,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const tablerow_changes = {};
-    			if (dirty & /*listOfPeople*/ 1) tablerow_changes.personData = /*person*/ ctx[4];
+    			if (dirty & /*listOfPeople*/ 1) tablerow_changes.personData = /*person*/ ctx[5];
     			tablerow.$set(tablerow_changes);
     		},
     		i: function intro(local) {
@@ -965,7 +965,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(23:0) {#each listOfPeople as person}",
+    		source: "(29:0) {#each listOfPeople as person}",
     		ctx
     	});
 
@@ -1007,7 +1007,7 @@ var app = (function () {
     			}
 
     			attr_dev(table, "class", "svelte-1uq61t");
-    			add_location(table, file$1, 20, 0, 551);
+    			add_location(table, file$1, 26, 0, 742);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1096,17 +1096,24 @@ var app = (function () {
     	let { list } = $$props;
     	let listOfPeople = list.listOfPeople;
     	const headData = Object.keys(listOfPeople[0]);
+    	let lastSorted = '';
 
     	function sort(event) {
     		const target = event.detail.column;
 
-    		$$invalidate(0, listOfPeople = listOfPeople.sort(function (a, b) {
-    			let x = a[target];
-    			let y = b[target];
-    			if (x < y) return -1;
-    			if (y > x) return 1;
-    			return 0;
-    		}));
+    		if (target !== lastSorted) {
+    			lastSorted = target;
+
+    			$$invalidate(0, listOfPeople = listOfPeople.sort(function (a, b) {
+    				let x = a[target];
+    				let y = b[target];
+    				if (x < y) return -1;
+    				if (y > x) return 1;
+    				return 0;
+    			}));
+    		} else {
+    			$$invalidate(0, listOfPeople = listOfPeople.reverse());
+    		}
     	}
 
     	const writable_props = ['list'];
@@ -1125,12 +1132,14 @@ var app = (function () {
     		headData,
     		TableHead,
     		TableRow,
+    		lastSorted,
     		sort
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('list' in $$props) $$invalidate(3, list = $$props.list);
     		if ('listOfPeople' in $$props) $$invalidate(0, listOfPeople = $$props.listOfPeople);
+    		if ('lastSorted' in $$props) lastSorted = $$props.lastSorted;
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -1197,10 +1206,10 @@ var app = (function () {
     			t3 = space();
     			create_component(table.$$.fragment);
     			attr_dev(h1, "class", "svelte-1tky8bj");
-    			add_location(h1, file, 10, 1, 105);
-    			add_location(p, file, 11, 1, 128);
+    			add_location(h1, file, 6, 1, 101);
+    			add_location(p, file, 7, 1, 124);
     			attr_dev(main, "class", "svelte-1tky8bj");
-    			add_location(main, file, 9, 0, 97);
+    			add_location(main, file, 5, 0, 93);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
